@@ -1,0 +1,24 @@
+{
+  "name": "brightcove-controller",
+  "version": "1.0.0",
+  "description": "a custom plugin for brightcove players only to add custom functionality to the brightcove player",
+  "main": "src/controller.js",
+  "scripts": {
+    "deploy": "gh-pages -m 'auto commit [ci skip]' -d src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasch-dtc/brightcove-controller.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasch-dtc/brightcove-controller/issues"
+  },
+  "homepage": "https://github.com/rasch-dtc/brightcove-controller#readme",
+  "dependencies": {
+    "gh-pages": "^0.11.0"
+  }
+}
