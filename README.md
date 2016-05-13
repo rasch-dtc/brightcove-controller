@@ -1,5 +1,5 @@
 # brightcove-controller
-a custom plugin for brightcove players only to add custom functionality to the brightcove player
+a custom plugin for brightcove players only to add custom functionality to the brightcove player (mainly pre/mid/post - roll)
 
 ## setup
 * checkout this repository `git checkout https://github.com/rasch-dtc/brightcove-controller.git`

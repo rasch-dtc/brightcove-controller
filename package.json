@@ -5,7 +5,8 @@
   "main": "src/controller.js",
   "scripts": {
     "deploy": "gh-pages -m 'auto commit [ci skip]' -d src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node node_modules/.bin/http-server src/"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/rasch-dtc/brightcove-controller#readme",
   "dependencies": {
     "gh-pages": "^0.11.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
   }
 }

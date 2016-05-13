@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Start Plugin Dev</title>
+</head>
+
+<body>
+    <div style="display: block; position: relative; max-width: 100%;">
+        <div style="padding-top: 56.25%;">
+            <video id="player"
+                   data-video-id="4890453200001"
+                   data-account="2112711546001"
+                   data-player="Hk62ymGG"
+                   data-embed="default"
+                   class="video-js"
+                   controls
+                   style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+            <script src="//players.brightcove.net/2112711546001/Hk62ymGG_default/index.min.js"></script>
+            <script type="text/javascript" src="plugin-roll.js"></script>
+            <link href="plugin-roll.css" rel="stylesheet">
+            <script>
+                var options = {
+                    'overlayText': 'This data supplied at initialization'
+                };
+
+                videojs('player').pluginRoll(options);
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
