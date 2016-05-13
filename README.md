@@ -15,3 +15,6 @@ http://rasch-dtc.github.io/brightcove-controller/controller.js
 * create a new player or edit an existing one
 * go to "Plugins" section, press Edit
 * add the desired file of this repo trough the public github domain (just for dev!) to your plugin list
+
+## following this guide
+https://docs.brightcove.com/en/video-cloud/player-management/guides/plugin-dev-quick-start.html
