@@ -1,4 +1,5 @@
 videojs.plugin('pluginRoll', function (options) {
+    debugger;
     var player = this,
         allTextTacks,
         tt,
@@ -15,7 +16,6 @@ videojs.plugin('pluginRoll', function (options) {
 
     console.info('bcCtrl: wait for loadmetadata event..');
     player.one("loadedmetadata", function () {
-        debugger;
         cuePointAra = player.mediainfo.cue_points;
 
         allTextTacks = player.textTracks();
