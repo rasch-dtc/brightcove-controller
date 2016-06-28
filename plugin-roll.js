@@ -60,7 +60,7 @@ videojs.plugin('pluginRoll', function (options) {
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
         tt.oncuechange = function () {
-            window.info('oncuechanged event fired LOL');
+            console.info('oncuechanged event fired LOL');
             if (tt.activeCues[0] !== undefined) {
                 onCueChanged(tt.activeCues[0]);
             } else {
@@ -80,5 +80,5 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
         return idxArr;
-    };
+    }
 });
