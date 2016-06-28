@@ -27,8 +27,16 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        console.info('bcCtrl, cuepoints? ', tt.cues.length);
+        function cueChange(){
+            var cues = allTextTacks.activeCues;
+            if (cues.length > 0){
+                window.info('cue change detected, active now: ', cues);
+            }
+        }
 
+        window.cueInterval = setInterval(cueChange, 500);
+
+        console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
         tt.oncuechange = function () {
             if (tt.activeCues[0] !== undefined) {
