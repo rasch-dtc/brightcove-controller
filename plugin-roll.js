@@ -13,6 +13,7 @@ videojs.plugin('pluginRoll', function (options) {
 
     player.el().appendChild(overlay);
 
+    console.info('bcCtrl: wait for loadmetadata event..');
     player.one("loadedmetadata", function () {
         cuePointAra = player.mediainfo.cue_points;
 
@@ -26,7 +27,7 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        console.info('cuepoints? ', tt.cues.length);
+        console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
         tt.oncuechange = function () {
             if (tt.activeCues[0] !== undefined) {
