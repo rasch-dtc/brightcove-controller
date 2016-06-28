@@ -28,8 +28,8 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        function onCueChanged() {
-            allCuePointData = getSubArray(cuePointAra, 'time', tt.activeCues[0].startTime);
+        function onCueChanged(activeCue) {
+            allCuePointData = getSubArray(cuePointAra, 'time', activeCue.startTime);
 
             console.info('cue point data:', allCuePointData);
             console.info('cue point metadata:', allCuePointData[0].metadata);
