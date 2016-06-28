@@ -29,7 +29,8 @@ videojs.plugin('pluginRoll', function (options) {
 
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
-        var cueChange = function () {
+
+        tt.oncuechange = function () {
             if (tt.activeCues[0] !== undefined) {
                 allCuePointData = getSubArray(cuePointAra, 'time', tt.activeCues[0].startTime);
 
@@ -50,9 +51,7 @@ videojs.plugin('pluginRoll', function (options) {
             } else {
                 console.warn('got undefined cue point!', tt);
             }
-        };
-
-        tt.addEventListener('cuechange', cueChange, false);
+        }
     });
 
     function getSubArray(targetArray, objProperty, value) {
