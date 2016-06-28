@@ -53,8 +53,6 @@ videojs.plugin('pluginRoll', function (options) {
             if (cues && cues.length > 0 && (!currentCue || currentCue.startTime !== cues[0].startTime)) {
                 console.info('cue change detected, active now: ', cues);
                 onCueChanged(cues[0]);
-            } else {
-                currentCue = null;
             }
         }
 
