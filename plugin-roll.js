@@ -1,5 +1,4 @@
 videojs.plugin('pluginRoll', function (options) {
-    debugger;
     var player = this,
         allTextTacks,
         tt,
@@ -58,6 +57,8 @@ videojs.plugin('pluginRoll', function (options) {
         // window.cueInterval = setInterval(cueChange, 10);
 
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
+        console.info('bcCtrl? ', tt.oncuechange);
+        console.info('bcCtrl? ', tt.oncuechange);
 
         tt.oncuechange = function () {
             console.info('oncuechanged event fired LOL');
