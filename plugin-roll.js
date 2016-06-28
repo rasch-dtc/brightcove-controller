@@ -1,7 +1,6 @@
 videojs.plugin('pluginRoll', function (options) {
     var player = this,
         allTextTacks,
-        attLength,
         tt,
         cuePointAra = [],
         allCuePointData,
@@ -19,9 +18,8 @@ videojs.plugin('pluginRoll', function (options) {
         cuePointAra = player.mediainfo.cue_points;
 
         allTextTacks = player.textTracks();
-        attLength = allTextTacks.length;
 
-        for (var i = 0; i < attLength; i++) {
+        for (var i = 0, len = allTextTacks.length; i < len; i++) {
             if (allTextTacks[i].kind === 'metadata') {
                 tt = allTextTacks[i];
                 break;
@@ -56,7 +54,7 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        window.cueInterval = setInterval(cueChange, 10);
+        // window.cueInterval = setInterval(cueChange, 10);
 
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
