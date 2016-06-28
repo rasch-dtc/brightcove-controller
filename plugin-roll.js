@@ -51,7 +51,7 @@ videojs.plugin('pluginRoll', function (options) {
             var cues = tt.activeCues;
             if (cues && cues.length > 0){
                 console.info('cue change detected, active now: ', cues);
-                onCueChanged(cues);
+                onCueChanged(cues[0]);
             }
         }
 
