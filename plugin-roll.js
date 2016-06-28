@@ -28,8 +28,9 @@ videojs.plugin('pluginRoll', function (options) {
         }
 
         function cueChange(){
-            var cues = allTextTacks.activeCues;
-            if (cues.length > 0){
+            var textTracks = player.textTracks();
+            var cues = textTracks.activeCues;
+            if (cues && cues.length > 0){
                 window.info('cue change detected, active now: ', cues);
             }
         }
