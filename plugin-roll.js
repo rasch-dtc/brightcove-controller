@@ -5,7 +5,7 @@ videojs.plugin('pluginRoll', function (options) {
         tt,
         cuePointAra = [],
         allCuePointData,
-        activeCue,
+        currentCue,
         overlay = document.createElement('p')
         ;
 
@@ -29,6 +29,7 @@ videojs.plugin('pluginRoll', function (options) {
         }
 
         function onCueChanged(activeCue) {
+            currentCue = activeCue;
             allCuePointData = getSubArray(cuePointAra, 'time', activeCue.startTime);
 
             console.info('cue point data:', allCuePointData);
@@ -49,7 +50,7 @@ videojs.plugin('pluginRoll', function (options) {
 
         function cueChange() {
             var cues = tt.activeCues;
-            if (cues && cues.length > 0){
+            if (cues && cues.length > 0 && currentCue.startTime !== cues[0].startTime){
                 console.info('cue change detected, active now: ', cues);
                 onCueChanged(cues[0]);
             }
