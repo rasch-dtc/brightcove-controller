@@ -28,36 +28,41 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        function cueChange(){
-            var cues = tt.activeCues;
-            if (cues && cues.length > 0){
-                console.info('cue change detected, active now: ', cues);
-                activeCue = cue;
+        function onCueChanged() {
+            allCuePointData = getSubArray(cuePointAra, 'time', tt.activeCues[0].startTime);
+
+            console.info('cue point data:', allCuePointData);
+            console.info('cue point metadata:', allCuePointData[0].metadata);
+
+            // is it a cue-point about pre- mid- or post-roll?
+            if (allCuePointData[0].name.indexOf('Roll') > -1) {
+                // so first, pause the current video tho show an ad
+                player.pause();
+
+                // the metadata should contain our add-url to pull the ad-video
+                var url = allCuePointData[0].metadata;
+                url = url.replace('{tmstp}', new Date().getTime());
+
+                console.info('call this url to pull an ad video!', url);
             }
         }
 
-        window.cueInterval = setInterval(cueChange, 1);
+        function cueChange() {
+            var cues = tt.activeCues;
+            if (cues && cues.length > 0){
+                console.info('cue change detected, active now: ', cues);
+                onCueChanged(cues);
+            }
+        }
+
+        window.cueInterval = setInterval(cueChange, 10);
 
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
         tt.oncuechange = function () {
+            window.info('oncuechanged event fired LOL');
             if (tt.activeCues[0] !== undefined) {
-                allCuePointData = getSubArray(cuePointAra, 'time', tt.activeCues[0].startTime);
-
-                console.info('cue point data:', allCuePointData);
-                console.info('cue point metadata:', allCuePointData[0].metadata);
-
-                // is it a cue-point about pre- mid- or post-roll?
-                if (allCuePointData[0].name.indexOf('Roll') > -1) {
-                    // so first, pause the current video tho show an ad
-                    player.pause();
-
-                    // the metadata should contain our add-url to pull the ad-video
-                    var url = allCuePointData[0].metadata;
-                    url = url.replace('{tmstp}', new Date().getTime());
-
-                    console.info('call this url to pull an ad video!', url);
-                }
+                onCueChanged(tt.activeCues[0]);
             } else {
                 console.warn('got undefined cue point!', tt);
             }
