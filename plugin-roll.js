@@ -34,7 +34,7 @@ videojs.plugin('pluginRoll', function (options) {
             }
         }
 
-        window.cueInterval = setInterval(cueChange, 500);
+        window.cueInterval = setInterval(cueChange, 1);
 
         console.info('bcCtrl, cuepoints? ', tt.cues.length);
 
