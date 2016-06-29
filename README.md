@@ -18,3 +18,6 @@ http://rasch-dtc.github.io/brightcove-controller/controller.js
 
 ## following this guide
 https://docs.brightcove.com/en/video-cloud/player-management/guides/plugin-dev-quick-start.html
+
+### cue points info
+http://docs.brightcove.com/en/video-cloud/smart-player-api/samples/basic-cue-points.html
